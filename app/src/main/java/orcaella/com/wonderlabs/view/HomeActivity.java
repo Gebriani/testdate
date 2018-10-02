@@ -79,7 +79,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 if (response.isSuccessful()) {
                     dateModelList.clear();
                     dateModelList.addAll(response.body());
-                    Collections.sort(dateModelList);
+                    Collections.sort(dateModelList, Collections.reverseOrder());
                     adapter.notifyDataSetChanged();
 
                     Calendar calendar = Calendar.getInstance();
