@@ -19,6 +19,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -77,6 +79,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 if (response.isSuccessful()) {
                     dateModelList.clear();
                     dateModelList.addAll(response.body());
+                    Collections.sort(dateModelList);
                     adapter.notifyDataSetChanged();
 
                     Calendar calendar = Calendar.getInstance();
